@@ -1,9 +1,10 @@
 package com.example.matrix151springboot.service.auth;
+
 import com.example.matrix151springboot.dao.authUser.UserEntity;
 import com.example.matrix151springboot.mapper.UserMapper;
-import com.example.matrix151springboot.model.AuthDtos.AuthRequestDto;
-import com.example.matrix151springboot.model.AuthDtos.AuthenticationDto;
-import com.example.matrix151springboot.model.AuthDtos.UserRegisterRequestDto;
+import com.example.matrix151springboot.model.authDtos.AuthRequestDto;
+import com.example.matrix151springboot.model.authDtos.AuthenticationDto;
+import com.example.matrix151springboot.model.authDtos.UserRegisterRequestDto;
 import com.example.matrix151springboot.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+@SuppressWarnings("all")
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -21,6 +24,7 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authManager;
+
     public void register(UserRegisterRequestDto requestDto) {
         var user = UserRegisterRequestDto.builder()
                 .phoneNumber(requestDto.getPhoneNumber())

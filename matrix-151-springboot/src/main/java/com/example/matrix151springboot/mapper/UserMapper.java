@@ -1,6 +1,6 @@
 package com.example.matrix151springboot.mapper;
 import com.example.matrix151springboot.dao.authUser.UserEntity;
-import com.example.matrix151springboot.model.AuthDtos.UserRegisterRequestDto;
+import com.example.matrix151springboot.model.authDtos.UserRegisterRequestDto;
 import com.example.matrix151springboot.model.UserDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

@@ -24,14 +24,15 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Builder
 public class UserEntity implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String phoneNumber;
     private String email;
     private double balance;
-
     private String password;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp

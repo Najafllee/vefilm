@@ -7,7 +7,7 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface SeriesMapper {
-    @Mapping(source = "comments", target = "comments")
+
     SeriesViewDto entityToDto(SeriesEntity seriesEntity);
 
     @Mapping(source = "nameOfSeries", target = "nameOfSeries")

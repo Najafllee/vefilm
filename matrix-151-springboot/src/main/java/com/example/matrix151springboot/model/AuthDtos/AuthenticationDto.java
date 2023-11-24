@@ -1,4 +1,4 @@
-package com.example.matrix151springboot.model.AuthDtos;
+package com.example.matrix151springboot.model.authDtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

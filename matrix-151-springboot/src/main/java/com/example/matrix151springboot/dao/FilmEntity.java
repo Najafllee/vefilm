@@ -9,7 +9,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "films")
@@ -24,11 +23,9 @@ public class FilmEntity {
     private String nameOfFilm;
     private LocalDate originDate;
 
-    @OneToMany(mappedBy = "filmEntity",cascade = CascadeType.PERSIST)
-    private List<CommentEntity> comments;
-
     @CreationTimestamp
     private LocalDateTime createAt;
+
     @UpdateTimestamp
     private LocalDateTime updateAt;
 }

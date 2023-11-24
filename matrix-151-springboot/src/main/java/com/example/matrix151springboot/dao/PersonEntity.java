@@ -1,11 +1,14 @@
 package com.example.matrix151springboot.dao;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.util.List;
+
 @Entity
-@Table(name =  "persons")
+@Table(name = "persons")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

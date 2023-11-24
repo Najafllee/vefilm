@@ -4,6 +4,7 @@ import com.example.matrix151springboot.model.SeriesViewDto;
 import com.example.matrix151springboot.service.SeriesService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +24,7 @@ public class SeriesController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public void addSeries(@RequestBody @Valid SeriesViewDto seriesViewDto) {
         seriesService.addSeries(seriesViewDto);
 

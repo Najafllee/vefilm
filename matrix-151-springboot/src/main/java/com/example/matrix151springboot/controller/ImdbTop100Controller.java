@@ -12,10 +12,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/films")
 @RequiredArgsConstructor
-    public class ImdbTop100Controller {
+public class ImdbTop100Controller {
     private final ImdbTop100Service imdbTop100Service;
+
     @GetMapping
-    public List<MovieDto> getFilms(){
-       return imdbTop100Service.getTop100Movies();
+    public List<MovieDto> getFilms() {
+        return imdbTop100Service.getTop100Movies();
     }
 }

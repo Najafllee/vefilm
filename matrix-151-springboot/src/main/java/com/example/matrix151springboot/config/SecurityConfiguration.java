@@ -30,11 +30,11 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/v1/auth/register").permitAll()
                                 .requestMatchers("/v1/auth/login").permitAll()
-                                .requestMatchers("/actors").hasAnyRole("USER", "ADMIN")
-                                .requestMatchers("/Comments").permitAll()
-                                .requestMatchers("/subscriptions").permitAll()
-                                .requestMatchers("/vefilm/films/{filmId}").hasAnyRole("USER", "ADMIN")
-                                .requestMatchers("/films").hasRole("ADMIN")
+                                .requestMatchers("/vefilm/actors").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/vefilm/Comments").permitAll()
+                                .requestMatchers("/vefilm/subscriptions").permitAll()
+                                .requestMatchers("/films/{filmId}").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/films").permitAll()
                                 .requestMatchers("/vefilm/series").hasRole("ADMIN")
                                 .requestMatchers(permitSwagger).permitAll()
                                 .anyRequest().authenticated());

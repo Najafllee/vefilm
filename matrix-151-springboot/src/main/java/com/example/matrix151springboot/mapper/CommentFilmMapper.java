@@ -5,9 +5,7 @@ import com.example.matrix151springboot.model.CommentDto;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface CommentMapper {
-
-
+public interface CommentFilmMapper {
     CommentEntity dtoToEntity(CommentDto commentDto);
 
     CommentDto entityToDto(CommentEntity commentEntity);

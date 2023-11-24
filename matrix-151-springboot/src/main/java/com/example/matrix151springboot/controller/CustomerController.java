@@ -4,6 +4,7 @@ import com.example.matrix151springboot.model.Customer;
 import com.example.matrix151springboot.service.CustomerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +12,13 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/subscriptions")
+@RequestMapping("/vefilm/subscriptions")
 public class CustomerController {
     private final CustomerService customerService;
+
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("customer")
+    @ResponseStatus(HttpStatus.CREATED)
     public Customer subscribe(@RequestBody @Valid Customer customer) {
         if (customer.getName() == null || customer.getName().trim().isEmpty()) {
 
@@ -23,7 +26,8 @@ public class CustomerController {
         }
         return customerService.saveCustomer(customer);
     }
-   @GetMapping("/all")
+
+    @GetMapping("/all")
     public List<Customer> getAllSubscriptions() {
         return customerService.getAllSubscriptions();
     }

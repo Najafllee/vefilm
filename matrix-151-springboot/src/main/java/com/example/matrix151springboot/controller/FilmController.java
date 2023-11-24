@@ -4,6 +4,7 @@ import com.example.matrix151springboot.model.FilmViewDto;
 import com.example.matrix151springboot.service.FilmService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +23,7 @@ public class FilmController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public void addFilm(@RequestBody @Valid FilmViewDto filmViewDto) {
         filmService.addFilm(filmViewDto);
     }

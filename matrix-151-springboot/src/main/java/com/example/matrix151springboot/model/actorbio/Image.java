@@ -3,6 +3,7 @@ package com.example.matrix151springboot.model.actorbio;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -12,5 +13,4 @@ public class Image {
     private String url;
     private int width;
 
-    // Constructors, getters, and setters
 }

@@ -25,15 +25,17 @@ public class FilmService {
     }
 
     public void addFilm(FilmViewDto filmViewDto) {
-        log.info("FilmViewDto:{}",filmViewDto);
+        log.info("FilmViewDto:{}", filmViewDto);
         var filmEntity = filmMapper.dtoToEntity(filmViewDto);
-        log.info("FilmEntity:{}",filmEntity);
+        log.info("filmEntity:{}", filmEntity);
         filmRepository.save(filmEntity);
 
     }
 
     public void updateFilm(Long filmId, FilmViewDto filmViewDto) {
+        log.info("FilmViewDto:{}", filmViewDto);
         var filmEntity = filmMapper.dtoToEntity(filmId, filmViewDto);
+        log.info("filmEntity;{}", filmEntity);
         filmRepository.save(filmEntity);
     }
 
